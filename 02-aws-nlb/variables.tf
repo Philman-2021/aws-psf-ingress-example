@@ -22,7 +22,7 @@ variable "region" {
 variable "psf_nlb_port" {
   description = "The port for the AWS NLB"
   type        = string
-  default     = "80"
+  default     = "22"
 }
 
 variable "psf_nlb_protocol" {
