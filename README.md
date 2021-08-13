@@ -10,7 +10,7 @@
   
 ### Infrastructure diagram
 
-<img src="img/psf-infr-diagram.png" height="400">
+<img src="img/psf-infr-diagram2.png" height="400">
 
 ### Compatibility
 Terraform version | Controller version | Terraform provider version
