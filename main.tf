@@ -9,7 +9,7 @@ module "transit_aws_1" {
 
 module "spoke_aws_1" {
   source     = "terraform-aviatrix-modules/aws-spoke/aviatrix"
-  version    = "4.0.2"
+  version    = "4.0.3"
   name       = var.ingress_spoke_name
   cidr       = var.ingress_cidr
   region     = var.region
@@ -19,7 +19,7 @@ module "spoke_aws_1" {
 
 module "spoke_aws_2" {
   source     = "terraform-aviatrix-modules/aws-spoke/aviatrix"
-  version    = "4.0.2"
+  version    = "4.0.3"
   name       = var.sftp_spoke_name
   cidr       = var.sftp_spoke_cidr
   region     = var.region
