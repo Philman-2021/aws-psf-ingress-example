@@ -2,7 +2,7 @@
 data "terraform_remote_state" "ingress_infra" {
   backend = "local"
   config = {
-    path = "../../aws-psf-ingress/terraform.tfstate"
+    path = "../../aws-psf-ingress-example/terraform.tfstate"
   }
 }
 
