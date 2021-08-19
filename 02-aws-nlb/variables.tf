@@ -30,3 +30,13 @@ variable "psf_nlb_protocol" {
   type        = string
   default     = "TCP"
 }
+
+variable "target_ip_1" {
+  description = "NLB Target IP 1"
+  type = string
+}
+
+variable "target_ip_2" {
+  description = "NLB Target IP 2"
+  type = string
+}

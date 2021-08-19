@@ -10,19 +10,21 @@ resource "aws_lb_target_group" "psf_nlb_tg" {
   name        = "avx-psf-nlb-tg"
   port        = var.psf_nlb_port
   protocol    = var.psf_nlb_protocol
-  target_type = "instance"
+  target_type = "ip"
   vpc_id      = data.terraform_remote_state.ingress_infra.outputs.spoke_aws_1.vpc.vpc_id
 }
 
 resource "aws_lb_target_group_attachment" "psf_nlb_attachment_1" {
   target_group_arn = aws_lb_target_group.psf_nlb_tg.arn
-  target_id        = data.aviatrix_gateway.psf_gw.cloud_instance_id
+  target_id        = var.target_ip_1
+  availability_zone = "all"
   port             = var.psf_nlb_port
 }
 
 resource "aws_lb_target_group_attachment" "psf_nlb_attachment_2" {
   target_group_arn = aws_lb_target_group.psf_nlb_tg.arn
-  target_id        = data.aviatrix_gateway.psf_gw.peering_ha_cloud_instance_id
+  target_id        = var.target_ip_2
+  availability_zone = "all"
   port             = var.psf_nlb_port
 }
 
